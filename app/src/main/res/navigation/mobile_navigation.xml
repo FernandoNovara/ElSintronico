@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/inicioFragment">
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.sintronico.Ui.Inicio.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/bicicletasFragment"
+        android:name="com.example.sintronico_app.Ui.Bicicletas.BicicletasFragment"
+        android:label="fragment_bicicletas"
+        tools:layout="@layout/fragment_bicicletas" >
+        <action
+            android:id="@+id/action_bicicletasFragment_to_detalleBicicletaFragment"
+            app:destination="@id/detalleBicicletaFragment" />
+        <action
+            android:id="@+id/action_bicicletasFragment_to_altaBicicletaFragment"
+            app:destination="@id/altaBicicletaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.example.sintronico_app.Ui.Pagos.PagosFragment"
+        android:label="fragment_pagos"
+        tools:layout="@layout/fragment_pagos" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.sintronico_app.Ui.Perfil.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/PresupuestoFragment"
+        android:name="com.example.sintronico_app.Ui.Presupuesto.PresupuestoFragment"
+        android:label="fragment_presupuesto"
+        tools:layout="@layout/fragment_presupuesto" >
+        <action
+            android:id="@+id/action_PresupuestoFragment_to_detalle_PresupuestoFragment"
+            app:destination="@id/detalle_PresupuestoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/repuestosFragment"
+        android:name="com.example.sintronico_app.Ui.Repuestos.RepuestosFragment"
+        android:label="fragment_repuestos"
+        tools:layout="@layout/fragment_repuestos" >
+        <action
+            android:id="@+id/action_repuestosFragment_to_detalle_RepuestoFragment"
+            app:destination="@id/detalle_RepuestoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salirFragment"
+        android:name="com.example.sintronico_app.Ui.Salir.SalirFragment"
+        android:label="fragment_salir"
+        tools:layout="@layout/fragment_salir" />
+    <fragment
+        android:id="@+id/detalleBicicletaFragment"
+        android:name="com.example.sintronico_app.Ui.Bicicletas.DetalleBicicletaFragment"
+        android:label="fragment_detalle_bicicleta"
+        tools:layout="@layout/fragment_detalle_bicicleta" >
+        <action
+            android:id="@+id/action_detalleBicicletaFragment_to_bicicletasFragment"
+            app:destination="@id/bicicletasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalle_PresupuestoFragment"
+        android:name="com.example.sintronico_app.Ui.Presupuesto.Detalle_PresupuestoFragment"
+        android:label="fragment_detalle_presupuesto"
+        tools:layout="@layout/fragment_detalle_presupuesto" >
+        <action
+            android:id="@+id/action_detalle_PresupuestoFragment_to_reparacionesFragment"
+            app:destination="@id/PresupuestoFragment" />
+        <action
+            android:id="@+id/action_detalle_PresupuestoFragment_to_PresupuestoFragment"
+            app:destination="@id/PresupuestoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalle_RepuestoFragment"
+        android:name="com.example.sintronico_app.Ui.Repuestos.Detalle_RepuestoFragment"
+        android:label="fragment_detalle__repuesto"
+        tools:layout="@layout/fragment_detalle__repuesto" >
+        <action
+            android:id="@+id/action_detalle_RepuestoFragment_to_repuestosFragment"
+            app:destination="@id/repuestosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/altaBicicletaFragment"
+        android:name="com.example.sintronico_app.Ui.Bicicletas.AltaBicicletaFragment"
+        android:label="fragment_alta_bicicleta"
+        tools:layout="@layout/fragment_alta_bicicleta" >
+        <action
+            android:id="@+id/action_altaBicicletaFragment_to_bicicletasFragment"
+            app:destination="@id/bicicletasFragment" />
+    </fragment>
+</navigation>
