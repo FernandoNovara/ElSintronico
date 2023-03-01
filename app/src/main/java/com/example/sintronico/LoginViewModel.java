@@ -9,6 +9,9 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
+import com.example.sintronico.Modelo.User;
+import com.example.sintronico.Request.ApiRetrofit;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
