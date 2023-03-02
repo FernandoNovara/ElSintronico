@@ -12,4 +12,11 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="Aceptar">aceptar</string>
     <string name="Quedarse">quedarse</string>
+    <string name="Inicio">inicio</string>
+    <string name="Perfil">perfil</string>
+    <string name="Bicicletas">bicicileta</string>
+    <string name="Repuestos">repuestos</string>
+    <string name="Presupuestos">Presupuestos</string>
+    <string name="Pagos">pagis</string>
+    <string name="Salir">salir</string>
 </resources>

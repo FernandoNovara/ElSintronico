@@ -11,7 +11,7 @@
         tools:layout="@layout/activity_login" />
     <fragment
         android:id="@+id/bicicletasFragment"
-        android:name="com.example.sintronico_app.Ui.Bicicletas.BicicletasFragment"
+        android:name="com.example.sintronico.Ui.Bicicletas.BicicletasFragment"
         android:label="fragment_bicicletas"
         tools:layout="@layout/fragment_bicicletas" >
         <action
@@ -23,17 +23,17 @@
     </fragment>
     <fragment
         android:id="@+id/pagosFragment"
-        android:name="com.example.sintronico_app.Ui.Pagos.PagosFragment"
+        android:name="com.example.sintronico.Ui.Pagos.PagosFragment"
         android:label="fragment_pagos"
         tools:layout="@layout/fragment_pagos" />
     <fragment
         android:id="@+id/perfilFragment"
-        android:name="com.example.sintronico_app.Ui.Perfil.PerfilFragment"
+        android:name="com.example.sintronico.Ui.Perfil.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/PresupuestoFragment"
-        android:name="com.example.sintronico_app.Ui.Presupuesto.PresupuestoFragment"
+        android:name="com.example.sintronico.Ui.Presupuesto.PresupuestoFragment"
         android:label="fragment_presupuesto"
         tools:layout="@layout/fragment_presupuesto" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/repuestosFragment"
-        android:name="com.example.sintronico_app.Ui.Repuestos.RepuestosFragment"
+        android:name="com.example.sintronico.Ui.Repuestos.RepuestosFragment"
         android:label="fragment_repuestos"
         tools:layout="@layout/fragment_repuestos" >
         <action
@@ -51,12 +51,12 @@
     </fragment>
     <fragment
         android:id="@+id/salirFragment"
-        android:name="com.example.sintronico_app.Ui.Salir.SalirFragment"
+        android:name="com.example.sintronico.Ui.Salir.SalirFragment"
         android:label="fragment_salir"
         tools:layout="@layout/fragment_salir" />
     <fragment
         android:id="@+id/detalleBicicletaFragment"
-        android:name="com.example.sintronico_app.Ui.Bicicletas.DetalleBicicletaFragment"
+        android:name="com.example.sintronico.Ui.Bicicletas.DetalleBicicletaFragment"
         android:label="fragment_detalle_bicicleta"
         tools:layout="@layout/fragment_detalle_bicicleta" >
         <action
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/detalle_PresupuestoFragment"
-        android:name="com.example.sintronico_app.Ui.Presupuesto.Detalle_PresupuestoFragment"
+        android:name="com.example.sintronico.Ui.Presupuesto.Detalle_PresupuestoFragment"
         android:label="fragment_detalle_presupuesto"
         tools:layout="@layout/fragment_detalle_presupuesto" >
         <action
@@ -77,16 +77,16 @@
     </fragment>
     <fragment
         android:id="@+id/detalle_RepuestoFragment"
-        android:name="com.example.sintronico_app.Ui.Repuestos.Detalle_RepuestoFragment"
+        android:name="com.example.sintronico.Ui.Repuestos.Detalle_RepuestoFragment"
         android:label="fragment_detalle__repuesto"
-        tools:layout="@layout/fragment_detalle__repuesto" >
+        tools:layout="@layout/fragment_detalle_repuesto" >
         <action
             android:id="@+id/action_detalle_RepuestoFragment_to_repuestosFragment"
             app:destination="@id/repuestosFragment" />
     </fragment>
     <fragment
         android:id="@+id/altaBicicletaFragment"
-        android:name="com.example.sintronico_app.Ui.Bicicletas.AltaBicicletaFragment"
+        android:name="com.example.sintronico.Ui.Bicicletas.AltaBicicletaFragment"
         android:label="fragment_alta_bicicleta"
         tools:layout="@layout/fragment_alta_bicicleta" >
         <action
