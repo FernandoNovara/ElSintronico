@@ -29,7 +29,7 @@ public class Detalle_RepuestoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_detalle__repuesto, container, false);
+        View view = inflater.inflate(R.layout.fragment_detalle_repuesto, container, false);
 
         detalleRepuesto = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(DetalleRepuestoViewModel.class);
 

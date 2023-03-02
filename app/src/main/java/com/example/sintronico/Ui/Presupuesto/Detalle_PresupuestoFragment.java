@@ -39,7 +39,7 @@ public class Detalle_PresupuestoFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detalle_presupuesto, container, false);
 
-        DetallePresupuestoViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(com.example.sintronico_app.Ui.Presupuesto.DetallePresupuestoViewModel.class);
+        DetallePresupuestoViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(DetallePresupuestoViewModel.class);
 
         DetallePresupuestoViewModel.getDetalleMutable().observe(getViewLifecycleOwner(), new Observer<ArrayList<DetallePresupuesto>>() {
             @Override

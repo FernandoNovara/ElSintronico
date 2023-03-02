@@ -37,7 +37,7 @@ public class PresupuestoAdapter extends RecyclerView.Adapter<PresupuestoAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_reparaciones,parent,false);
+        View view = inflater.inflate(R.layout.item_presupuestos,parent,false);
         return new ViewHolder(view);
     }
 
