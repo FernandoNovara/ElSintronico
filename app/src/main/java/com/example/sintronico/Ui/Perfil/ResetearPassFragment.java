@@ -11,12 +11,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.sintronico.R;
 
 public class ResetearPassFragment extends Fragment {
 
-    private ResetearPassViewModel mViewModel;
+    private ResetearPassViewModel resetearViewModel;
+    private EditText edContraseñaNueva,edConfirmarContraseña;
+    private Button btnCambiar;
 
     public static ResetearPassFragment newInstance() {
         return new ResetearPassFragment();
@@ -25,14 +30,27 @@ public class ResetearPassFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_resetear_pass, container, false);
+        View view = inflater.inflate(R.layout.fragment_resetear_pass, container, false);
+        resetearViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(ResetearPassViewModel.class);
+        Inicializar(view);
+        return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ResetearPassViewModel.class);
-        // TODO: Use the ViewModel
+    private void Inicializar(View view)
+    {
+        edContraseñaNueva = view.findViewById(R.id.edContraseñaNueva);
+        edConfirmarContraseña = view.findViewById(R.id.edConfirmarContraseña);
+        btnCambiar = view.findViewById(R.id.btnCambiar);
+
+        btnCambiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    resetearViewModel.CambiarContraseña(edContraseñaNueva.getText().toString());
+            }
+        });
+
+
     }
+
 
 }

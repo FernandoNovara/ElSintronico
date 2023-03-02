@@ -3,11 +3,13 @@ package com.example.sintronico.Ui.Perfil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +26,7 @@ public class PerfilFragment extends Fragment {
 
     private PerfilViewModel perfilViewModel;
     private EditText edNombre,edApellido,edDni,edTelefono,edEmail,edDireccion;
-    private Button btnEditar;
+    private Button btnEditar,btnCambiar;
 
 
     public static PerfilFragment newInstance() {
@@ -85,6 +87,7 @@ public class PerfilFragment extends Fragment {
         edTelefono = view.findViewById(R.id.edTelefono);
         edEmail = view.findViewById(R.id.edEmail);
         btnEditar = view.findViewById(R.id.btnEditar);
+        btnCambiar = view.findViewById(R.id.btnCambiar);
 
         perfilViewModel.ObtenerPerfil();
 
@@ -100,8 +103,16 @@ public class PerfilFragment extends Fragment {
             p.setEmail(edEmail.getText().toString());
 
             perfilViewModel.cambio(btnEditar.getText().toString(),p);
-        }
-    });
+
+            }
+        });
+
+        btnCambiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController((Activity) getContext(),R.id.nav_host_fragment_content_main).navigate(R.id.resetearPassFragment);
+            }
+        });
 
     }
 

@@ -30,7 +30,11 @@
         android:id="@+id/perfilFragment"
         android:name="com.example.sintronico.Ui.Perfil.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfilFragment_to_resetearPassFragment"
+            app:destination="@id/resetearPassFragment" />
+    </fragment>
     <fragment
         android:id="@+id/PresupuestoFragment"
         android:name="com.example.sintronico.Ui.Presupuesto.PresupuestoFragment"
@@ -92,5 +96,13 @@
         <action
             android:id="@+id/action_altaBicicletaFragment_to_bicicletasFragment"
             app:destination="@id/bicicletasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetearPassFragment"
+        android:name="com.example.sintronico.Ui.Perfil.ResetearPassFragment"
+        android:label="ResetearPassFragment" >
+        <action
+            android:id="@+id/action_resetearPassFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
 </navigation>
