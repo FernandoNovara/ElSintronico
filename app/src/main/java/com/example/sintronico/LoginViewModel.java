@@ -11,6 +11,7 @@ import androidx.lifecycle.AndroidViewModel;
 
 import com.example.sintronico.Modelo.User;
 import com.example.sintronico.Request.ApiRetrofit;
+import com.example.sintronico.Ui.Perfil.PedirEmailActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,16 +19,16 @@ import retrofit2.Response;
 
 public class LoginViewModel extends AndroidViewModel {
 
-    private Context contexto;
+    private Context context;
 
     public LoginViewModel(@NonNull Application application) {
         super(application);
-        this.contexto = application.getApplicationContext();
+        this.context = application.getApplicationContext();
     }
 
     public void iniciarSesion(String usuario, String contraseña)
     {
-        User user = new User("Fernando@mail.com","1234");
+        User user = new User(usuario,contraseña);
         Call<String> tokenPromesa = ApiRetrofit.getServiceSintronico().login(user);
         tokenPromesa.enqueue(new Callback<String>() {
             @Override
@@ -35,15 +36,15 @@ public class LoginViewModel extends AndroidViewModel {
                 if(response.isSuccessful())
                 {
                     Log.d("Salida",response.body());
-                    SharedPreferences sp = ApiRetrofit.obtenerSharedPreferences(contexto);
+                    SharedPreferences sp = ApiRetrofit.obtenerSharedPreferences(context);
                     SharedPreferences.Editor editor = sp.edit();
                     String token ="Bearer "+response.body();
                     editor.putString("token",token);
                     editor.commit();
 
-                    Intent i = new Intent(contexto,MainActivity.class);
+                    Intent i = new Intent(context,MainActivity.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    contexto.startActivity(i);
+                    context.startActivity(i);
 
 
                 }
@@ -60,5 +61,12 @@ public class LoginViewModel extends AndroidViewModel {
             }
         });
 
+    }
+
+    public void Olvidado()
+    {
+        Intent i = new Intent(context, PedirEmailActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 }

@@ -1,9 +1,15 @@
 package com.example.sintronico;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.sintronico.Modelo.Propietario;
+import com.example.sintronico.Request.ApiRetrofit;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -15,6 +21,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sintronico.databinding.ActivityMainBinding;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+        iniciarHeader(navigationView);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -54,5 +65,32 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void iniciarHeader(NavigationView navigationView) {
+
+        View header = navigationView.getHeaderView(0);
+        TextView nombreProp = header.findViewById(R.id.tvNombrePerfil);
+        TextView mailProp = header.findViewById(R.id.tvEmailPerfil);
+
+        SharedPreferences sp = ApiRetrofit.obtenerSharedPreferences(navigationView.getContext());
+        Call<Propietario> propietario = ApiRetrofit.getServiceSintronico().obtenerPerfil(sp.getString("token", "-1"));
+        propietario.enqueue(new Callback<Propietario>() {
+            @Override
+            public void onResponse(Call<Propietario> call, Response<Propietario> response) {
+                if (response.isSuccessful()) {
+                    Propietario p = response.body();
+                    nombreProp.setText(p.getNombre() + " " + p.getApellido());
+                    mailProp.setText(p.getEmail());
+                } else {
+                    Log.d("Salida", "no mando nada");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Propietario> call, Throwable t) {
+
+            }
+        });
     }
 }

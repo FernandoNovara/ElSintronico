@@ -2,11 +2,14 @@ package com.example.sintronico.Ui.Perfil;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +22,7 @@ import com.example.sintronico.R;
 
 public class ResetearPassFragment extends Fragment {
 
+    private Context context;
     private ResetearPassViewModel resetearViewModel;
     private EditText edContraseñaNueva,edConfirmarContraseña;
     private Button btnCambiar;
@@ -31,6 +35,7 @@ public class ResetearPassFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_resetear_pass, container, false);
+        this.context = view.getContext();
         resetearViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(ResetearPassViewModel.class);
         Inicializar(view);
         return view;
@@ -46,6 +51,7 @@ public class ResetearPassFragment extends Fragment {
             @Override
             public void onClick(View v) {
                     resetearViewModel.CambiarContraseña(edContraseñaNueva.getText().toString());
+                Navigation.findNavController((Activity) context,R.id.nav_host_fragment_content_main).navigate(R.id.perfilFragment);
             }
         });
 

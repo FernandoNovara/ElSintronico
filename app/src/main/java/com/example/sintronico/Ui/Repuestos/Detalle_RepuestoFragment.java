@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.sintronico.Modelo.Repuesto;
@@ -21,6 +22,7 @@ public class Detalle_RepuestoFragment extends Fragment {
 
     private DetalleRepuestoViewModel detalleRepuesto;
     private EditText edCodigoRepuesto,edNombreRepuesto,edMontoRepuesto,edDetalleRepuesto;
+    private Button btnComprar;
 
     public static Detalle_RepuestoFragment newInstance() {
         return new Detalle_RepuestoFragment();
@@ -54,8 +56,16 @@ public class Detalle_RepuestoFragment extends Fragment {
         edNombreRepuesto = view.findViewById(R.id.edNombreRepuesto);
         edMontoRepuesto = view.findViewById(R.id.edMontoRepuesto);
         edDetalleRepuesto = view.findViewById(R.id.edDetalleRepuesto);
+        btnComprar = view.findViewById(R.id.btnComprar);
 
         detalleRepuesto.detalles(getArguments());
+
+        btnComprar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                detalleRepuesto.Comprar();
+            }
+        });
     }
 
 }

@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button btnLogin;
+    private Button btnLogin,btnOlvidado;
     private EditText etUsuario,etContraseña;
     private LoginViewModel loginViewModel;
 
@@ -28,11 +28,19 @@ public class LoginActivity extends AppCompatActivity {
         this.etUsuario = findViewById(R.id.etUsuario);
         this.etContraseña = findViewById(R.id.etContraseña);
         this.btnLogin = findViewById(R.id.btnLogin);
+        this.btnOlvidado = findViewById(R.id.btnOlvidado);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginViewModel.iniciarSesion(etUsuario.getText().toString(),etContraseña.getText().toString());
+            }
+        });
+
+        btnOlvidado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginViewModel.Olvidado();
             }
         });
     }

@@ -28,6 +28,10 @@
             android:value="AIzaSyCwJ9tJPup6sC4B9VL2X-erKKA9m7tPaU8" />
 
         <activity
+            android:name=".Ui.Perfil.PedirEmailActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".LoginActivity"
             android:exported="true" >
             <intent-filter>

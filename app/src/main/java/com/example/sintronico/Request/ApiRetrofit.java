@@ -98,6 +98,9 @@ public class ApiRetrofit
         @POST("Propietario/ObtenerEmail")
         Call<Propietario> ObtenerEmail(@Field("Email") String email);
 
+        @POST("Pago/AvisarCompra")
+        Call<Propietario> AvisarCompra(@Header("Authorization") String token);
+
         @FormUrlEncoded
         @POST("Propietario/ResetearPass")
         Call<Propietario> ResetearPass(@Header("Authorization") String token, @Field("contraseña") String contraseña);
