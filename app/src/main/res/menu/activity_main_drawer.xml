@@ -6,31 +6,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/inicioFragment"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="@string/Inicio" />
         <item
             android:id="@+id/perfilFragment"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/perfil"
             android:title="@string/Perfil" />
         <item
             android:id="@+id/bicicletasFragment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/bicicleta"
             android:title="@string/Bicicletas" />
         <item
             android:id="@+id/repuestosFragment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/repuestos"
             android:title="@string/Repuestos" />
         <item
             android:id="@+id/PresupuestoFragment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/presupuesto"
             android:title="@string/Presupuestos" />
         <item
             android:id="@+id/pagosFragment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/pagos"
             android:title="@string/Pagos" />
         <item
             android:id="@+id/salirFragment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/salir"
             android:title="@string/Salir" />
     </group>
 </menu>

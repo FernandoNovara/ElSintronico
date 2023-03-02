@@ -14,7 +14,7 @@
 
     <TextView
         android:id="@+id/tvNombrePerfil"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/tvEmailPerfil"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle" />

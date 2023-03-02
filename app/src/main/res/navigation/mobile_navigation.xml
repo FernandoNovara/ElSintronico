@@ -7,12 +7,12 @@
     <fragment
         android:id="@+id/inicioFragment"
         android:name="com.example.sintronico.Ui.Inicio.InicioFragment"
-        android:label="fragment_inicio"
+        android:label="@string/Inicio"
         tools:layout="@layout/activity_login" />
     <fragment
         android:id="@+id/bicicletasFragment"
         android:name="com.example.sintronico.Ui.Bicicletas.BicicletasFragment"
-        android:label="fragment_bicicletas"
+        android:label="@string/Bicicletas"
         tools:layout="@layout/fragment_bicicletas" >
         <action
             android:id="@+id/action_bicicletasFragment_to_detalleBicicletaFragment"
@@ -24,12 +24,12 @@
     <fragment
         android:id="@+id/pagosFragment"
         android:name="com.example.sintronico.Ui.Pagos.PagosFragment"
-        android:label="fragment_pagos"
+        android:label="@string/Pagos"
         tools:layout="@layout/fragment_pagos" />
     <fragment
         android:id="@+id/perfilFragment"
         android:name="com.example.sintronico.Ui.Perfil.PerfilFragment"
-        android:label="fragment_perfil"
+        android:label="@string/Perfil"
         tools:layout="@layout/fragment_perfil" >
         <action
             android:id="@+id/action_perfilFragment_to_resetearPassFragment"
@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/PresupuestoFragment"
         android:name="com.example.sintronico.Ui.Presupuesto.PresupuestoFragment"
-        android:label="fragment_presupuesto"
+        android:label="@string/Presupuestos"
         tools:layout="@layout/fragment_presupuesto" >
         <action
             android:id="@+id/action_PresupuestoFragment_to_detalle_PresupuestoFragment"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/repuestosFragment"
         android:name="com.example.sintronico.Ui.Repuestos.RepuestosFragment"
-        android:label="fragment_repuestos"
+        android:label="@string/Repuestos"
         tools:layout="@layout/fragment_repuestos" >
         <action
             android:id="@+id/action_repuestosFragment_to_detalle_RepuestoFragment"
@@ -56,12 +56,12 @@
     <fragment
         android:id="@+id/salirFragment"
         android:name="com.example.sintronico.Ui.Salir.SalirFragment"
-        android:label="fragment_salir"
+        android:label="@string/Salir"
         tools:layout="@layout/fragment_salir" />
     <fragment
         android:id="@+id/detalleBicicletaFragment"
         android:name="com.example.sintronico.Ui.Bicicletas.DetalleBicicletaFragment"
-        android:label="fragment_detalle_bicicleta"
+        android:label="Detalle de Bicicleta"
         tools:layout="@layout/fragment_detalle_bicicleta" >
         <action
             android:id="@+id/action_detalleBicicletaFragment_to_bicicletasFragment"
@@ -70,7 +70,7 @@
     <fragment
         android:id="@+id/detalle_PresupuestoFragment"
         android:name="com.example.sintronico.Ui.Presupuesto.Detalle_PresupuestoFragment"
-        android:label="fragment_detalle_presupuesto"
+        android:label="Detalle ed Presupuesto"
         tools:layout="@layout/fragment_detalle_presupuesto" >
         <action
             android:id="@+id/action_detalle_PresupuestoFragment_to_reparacionesFragment"
@@ -82,7 +82,7 @@
     <fragment
         android:id="@+id/detalle_RepuestoFragment"
         android:name="com.example.sintronico.Ui.Repuestos.Detalle_RepuestoFragment"
-        android:label="fragment_detalle__repuesto"
+        android:label="Detalle de Repuesto"
         tools:layout="@layout/fragment_detalle_repuesto" >
         <action
             android:id="@+id/action_detalle_RepuestoFragment_to_repuestosFragment"
@@ -91,7 +91,7 @@
     <fragment
         android:id="@+id/altaBicicletaFragment"
         android:name="com.example.sintronico.Ui.Bicicletas.AltaBicicletaFragment"
-        android:label="fragment_alta_bicicleta"
+        android:label="Alta de Bicicleta"
         tools:layout="@layout/fragment_alta_bicicleta" >
         <action
             android:id="@+id/action_altaBicicletaFragment_to_bicicletasFragment"
@@ -100,7 +100,7 @@
     <fragment
         android:id="@+id/resetearPassFragment"
         android:name="com.example.sintronico.Ui.Perfil.ResetearPassFragment"
-        android:label="ResetearPassFragment" >
+        android:label="Restablecer Contraseña" >
         <action
             android:id="@+id/action_resetearPassFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
